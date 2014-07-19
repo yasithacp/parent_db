@@ -425,64 +425,64 @@ if($empNumber == $_SESSION['empID']) {
                 <li class="l2">
                     <a href="<?php echo url_for('pim/contactDetails?empNumber=' . $empNumber); ?>" id="contactsLink" class="personal" accesskey="c">
                         <span><?php echo __("Contact Details");?></span></a></li>
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewEmergencyContacts?empNumber=' . $empNumber); ?>" id="emgcontactsLink" class="personal"  accesskey="e">
-                        <span><?php echo __("Emergency Contacts");?></span></a></li>
-
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewDependents?empNumber=' . $empNumber); ?>" id="dependentsLink" class="personal"  accesskey="d">
-                        <span><?php echo __("Dependents");?></span></a></li>
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewImmigration?empNumber=' . $empNumber); ?>" id="immigrationLink" class="personal" accesskey="i" >
-                        <span><?php echo __("Immigration");?></span></a></li>
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewJobDetails?empNumber=' . $empNumber);?>" id="jobLink" accesskey="j" class="employment"  >
-
-                        <span><?php echo __("Job");?></span></a></li>
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewSalaryList?empNumber=' . $empNumber);?>" id="paymentsLink" class="employment" accesskey="s" >
-                        <span><?php echo __("Salary");?></span></a></li>
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewEmergencyContacts?empNumber=' . $empNumber); ?><!--" id="emgcontactsLink" class="personal"  accesskey="e">-->
+<!--                        <span>--><?php //echo __("Emergency Contacts");?><!--</span></a></li>-->
+<!---->
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewDependents?empNumber=' . $empNumber); ?><!--" id="dependentsLink" class="personal"  accesskey="d">-->
+<!--                        <span>--><?php //echo __("Dependents");?><!--</span></a></li>-->
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewImmigration?empNumber=' . $empNumber); ?><!--" id="immigrationLink" class="personal" accesskey="i" >-->
+<!--                        <span>--><?php //echo __("Immigration");?><!--</span></a></li>-->
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewJobDetails?empNumber=' . $empNumber);?><!--" id="jobLink" accesskey="j" class="employment"  >-->
+<!---->
+<!--                        <span>--><?php //echo __("Job");?><!--</span></a></li>-->
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewSalaryList?empNumber=' . $empNumber);?><!--" id="paymentsLink" class="employment" accesskey="s" >-->
+<!--                        <span>--><?php //echo __("Salary");?><!--</span></a></li>-->
 <?php 
 
     $showTax = OrangeConfig::getInstance()->getAppConfValue(ConfigService::KEY_PIM_SHOW_TAX_EXEMPTIONS);
     if ($showTax) { ?>                        
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewUsTaxExemptions?empNumber=' . $empNumber);?>" id="taxLink" class="employment" accesskey="t" >
-                        <span><?php echo __("Tax Exemptions");?></span></a></li>
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewUsTaxExemptions?empNumber=' . $empNumber);?><!--" id="taxLink" class="employment" accesskey="t" >-->
+<!--                        <span>--><?php //echo __("Tax Exemptions");?><!--</span></a></li>-->
 <?php } ?>
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewReportToDetails?empNumber=' . $empNumber);?>" id="report-toLink" class="employment" accesskey="r" >
-                        <span><?php echo __("Report-to");?></span></a></li>   
-                <li class="l2">
-
-                    <a href="<?php echo url_for('pim/viewQualifications?empNumber=' . $empNumber); ?>" id="personalLink" class="personal" accesskey="p">
-                        <span><?php echo __("Qualifications");?></span></a></li>
-                
-                <li class="l2">
-                    <a href="<?php echo url_for('pim/viewMemberships?empNumber=' . $empNumber);?>" id="membershipsLink" class="pimmemberships" accesskey="m">
-                        <span><?php echo __("Membership");?></span>
-                    </a>
-                </li>                        
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewReportToDetails?empNumber=' . $empNumber);?><!--" id="report-toLink" class="employment" accesskey="r" >-->
+<!--                        <span>--><?php //echo __("Report-to");?><!--</span></a></li>   -->
+<!--                <li class="l2">-->
+<!---->
+<!--                    <a href="--><?php //echo url_for('pim/viewQualifications?empNumber=' . $empNumber); ?><!--" id="personalLink" class="personal" accesskey="p">-->
+<!--                        <span>--><?php //echo __("Qualifications");?><!--</span></a></li>-->
+<!--                -->
+<!--                <li class="l2">-->
+<!--                    <a href="--><?php //echo url_for('pim/viewMemberships?empNumber=' . $empNumber);?><!--" id="membershipsLink" class="pimmemberships" accesskey="m">-->
+<!--                        <span>--><?php //echo __("Membership");?><!--</span>-->
+<!--                    </a>-->
+<!--                </li>                        -->
             </ul>
         </li>
 
         <!-- start of leave section -->
         <?php if(isset ($_SESSION['leavePeriodDefined']) && $_SESSION['leavePeriodDefined'] == 1 && !in_array('leave', $_SESSION['admin.disabledModules'])) { ?>
-        <li class="l1 parent">
-            <a href="#" class="expanded" onclick="showHideSubMenu(this);"><span><?php echo __("Leave");?></span></a>
-            <ul class="l2">
-                <li class="l2">
-					<a href="javascript:leaveFormSubmission('leaveSummary');">
-						<span><?php echo __("Leave Summary");?></span>
-					</a>
-				</li>
-                <li class="l2">
-					<a href="javascript:leaveFormSubmission('leaveList');">
-						<span><?php echo __("Leave List");?></span>
-					</a>
-				</li>
-            </ul>
-        </li>
+<!--        <li class="l1 parent">-->
+<!--            <a href="#" class="expanded" onclick="showHideSubMenu(this);"><span>--><?php //echo __("Leave");?><!--</span></a>-->
+<!--            <ul class="l2">-->
+<!--                <li class="l2">-->
+<!--					<a href="javascript:leaveFormSubmission('leaveSummary');">-->
+<!--						<span>--><?php //echo __("Leave Summary");?><!--</span>-->
+<!--					</a>-->
+<!--				</li>-->
+<!--                <li class="l2">-->
+<!--					<a href="javascript:leaveFormSubmission('leaveList');">-->
+<!--						<span>--><?php //echo __("Leave List");?><!--</span>-->
+<!--					</a>-->
+<!--				</li>-->
+<!--            </ul>-->
+<!--        </li>-->
         <?php } ?>
 
     </ul>

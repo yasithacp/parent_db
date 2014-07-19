@@ -7,6 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class viewParentInfoAction {
+class viewParentInfoAction extends sfAction {
 
+    public function execute($request) {
+
+    }
 }

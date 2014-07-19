@@ -35,17 +35,19 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
         width: 100%;
         border-style: hidden;
         margin: auto;
-        padding-left: 10px;
+        /*padding-left: 10px;*/
     }
 
     #divUsername {
-        padding-top: 153px;
-        padding-left: 50%;
+        padding-top: 90px;
+        width: 240px;
+        margin: 0 auto;
     }
 
     #divPassword {
         padding-top: 35px;
-        padding-left: 50%;
+        width: 240px;
+        margin: 0 auto;
     }
 
     #txtUsername {
@@ -80,14 +82,13 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
     }
 
     #divLoginButton {
-        padding-top: 2px;
-        padding-left: 49.3%;
-        float: left;
-        width: 350px;
+        padding-top: 5px;
+        margin: 0 auto;
+        width: 94px;
     }
 
     #btnLogin {
-        background: url(<?php echo "{$imagePath}/Login_button.png"; ?>) no-repeat;
+        background: url(<?php echo "{$imagePath}/Login_button.png"; ?>) no-repeat center;
         cursor:pointer;
         width: 94px;
         height: 26px;
@@ -102,8 +103,9 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
     }
 
     #divLogo {
-        padding-left: 30%;
-        padding-top: 70px;
+        padding-top: 150px;
+        width: 339px;
+        margin: 0 auto;
     }
 
     #spanMessage {
@@ -142,7 +144,7 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
     <form id="frmLogin" method="post" action="<?php echo url_for('auth/validateCredentials'); ?>">
         <input type="hidden" name="actionID"/>
         <input type="hidden" name="hdnUserTimeZoneOffset" id="hdnUserTimeZoneOffset" value="0" />
-        <div id="logInPanelHeading"><?php echo __('LOGIN Panel'); ?></div>
+<!--        <div id="logInPanelHeading">--><?php //echo __('LOGIN Panel'); ?><!--</div>-->
 
         <div id="divUsername" class="textInputContainer">
             <?php echo $form['Username']->render(); ?>

@@ -8,6 +8,7 @@ $copyrightYear = '2012';
 <style type="text/css">
     #divFooter {
         text-align: center;
+        margin-top: 10px;
     }
     
     #spanCopyright, #spanSocialMedia {
@@ -22,18 +23,7 @@ $copyrightYear = '2012';
 </style>
 <div id="divFooter" >
     <span id="spanCopyright">
-        <a href="http://www.orangehrm.com" target="_blank">OrangeHRM</a> 
-        ver <?php echo $version; ?> &copy; OrangeHRM Inc. 2005 - <?php echo $copyrightYear; ?> All rights reserved.
-    </span>
-    <span id="spanSocialMedia">
-        <a href="http://www.linkedin.com/groups?home=&gid=891077" target="_blank">
-            <img src="<?php echo "{$imagePath}/linkedin.png"; ?>" /></a>&nbsp;
-        <a href="http://www.facebook.com/OrangeHRM" target="_blank">
-            <img src="<?php echo "{$imagePath}/facebook.png"; ?>" /></a>&nbsp;
-        <a href="http://twitter.com/orangehrm" target="_blank">
-            <img src="<?php echo "{$imagePath}/twiter.png"; ?>" /></a>&nbsp;
-        <a href="http://www.youtube.com/results?search_query=orangehrm&search_type=" target="_blank">
-            <img src="<?php echo "{$imagePath}/youtube.png"; ?>" /></a>&nbsp;
+        Copyright &copy; 2014 <a href="http://royalcollegesds.lk/" target="_blank">Royal College.</a> All rights reserved.
     </span>
     <br class="clear" />
 </div>
