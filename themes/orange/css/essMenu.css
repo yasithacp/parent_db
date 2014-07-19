@@ -1,0 +1,168 @@
+/**
+ * OrangeHRM Enterprise is a closed sourced comprehensive Human Resource Management (HRM)
+ * System that captures all the essential functionalities required for any enterprise.
+ * Copyright (C) 2006 OrangeHRM Inc., http://www.orangehrm.com
+ *
+ * OrangeHRM Inc is the owner of the patent, copyright, trade secrets, trademarks and any
+ * other intellectual property rights which subsist in the Licensed Materials. OrangeHRM Inc
+ * is the owner of the media / downloaded OrangeHRM Enterprise software files on which the
+ * Licensed Materials are received. Title to the Licensed Materials and media shall remain
+ * vested in OrangeHRM Inc. For the avoidance of doubt title and all intellectual property
+ * rights to any design, new software, new protocol, new interface, enhancement, update,
+ * derivative works, revised screen text or any other items that OrangeHRM Inc creates for
+ * Customer shall remain vested in OrangeHRM Inc. Any rights not expressly granted herein are
+ * reserved to OrangeHRM Inc.
+ *
+ * You should have received a copy of the OrangeHRM Enterprise  proprietary license file along
+ * with this program; if not, write to the OrangeHRM Inc. 538 Teal Plaza, Secaucus , NJ 0709
+ * to get the file.
+ *
+ */
+
+
+.mnuPIM {
+/*Remove all spacings from the list items*/
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	list-style-type: none;
+	display: inline;
+}
+
+
+.mnuPIM td{
+	display: table-cell;
+	position: relative;
+	padding: 4px 4px;
+	background-position: center top;
+	background-repeat: no-repeat;
+
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*** Menu colors (customizable) ***/
+
+.mnuPIM a{
+	text-decoration: none;
+	display: block;
+	vertical-align: bottom;
+	padding-top: 40px;
+
+	width:52px;
+
+	text-align:center;
+}
+
+.mnuPIM td{
+	height: 50px;
+	width: 54px;
+	vertical-align: top;
+	text-align:center;
+}
+
+#jobLink {
+	background-image: url(../icons/job.gif);
+	background-repeat: no-repeat;
+}
+
+#personalLink {
+	background-image: url(../icons/personal.gif);
+	background-repeat: no-repeat;
+}
+
+#dependentsLink {
+	background-image: url(../icons/dependants.gif);
+	background-repeat: no-repeat;
+}
+
+#contactsLink {
+	background-image: url(../icons/contact.gif);
+	background-repeat: no-repeat;
+}
+
+#emgcontactsLink {
+	background-image: url(../icons/emergency_contact.gif);
+	background-repeat: no-repeat;
+}
+
+#attachmentsLink {
+	background-image: url(../icons/attachments.gif);
+	background-repeat: no-repeat;
+}
+
+#cash_benefitsLink {
+	background-image: url(../icons/cash_benefits.gif);
+	background-repeat: no-repeat;
+}
+
+#educationLink {
+	background-image: url(../icons/education.gif);
+	background-repeat: no-repeat;
+}
+
+#immigrationLink {
+	background-image: url(../icons/immigration.gif);
+	background-repeat: no-repeat;
+}
+
+#photoLink {
+	background-image: url(../icons/photo.gif);
+	background-repeat: no-repeat;
+}
+
+#languagesLink {
+	background-image: url(../icons/languages.gif);
+	background-repeat: no-repeat;
+}
+
+#licensesLink {
+	background-image: url(../icons/license.gif);
+	background-repeat: no-repeat;
+}
+
+#membershipLink {
+	background-image: url(../icons/membership.gif);
+	background-repeat: no-repeat;
+}
+
+#non_cash_benefitsLink {
+	background-image: url(../icons/non_cash_benefits.gif);
+	background-repeat: no-repeat;
+}
+
+#paymentsLink {
+	background-image: url(../icons/payment.gif);
+	background-repeat: no-repeat;
+}
+
+#report-toLink {
+	background-image: url(../icons/report-to.gif);
+	background-repeat: no-repeat;
+}
+
+#skillsLink {
+	background-image: url(../icons/skills.gif);
+	background-repeat: no-repeat;
+}
+
+#work-experianceLink {
+	background-image: url(../icons/work_experience.gif);
+	background-repeat: no-repeat;
+}
+
+#taxLink {
+	background-image: url(../icons/tax.gif);
+	background-repeat: no-repeat;
+}
+
+#direct-debitLink {
+	background-image: url(../icons/direct_debit.gif);
+	background-repeat: no-repeat;
+}
+
+#customLink {
+	background-image: url(../icons/custom.gif);
+	background-repeat: no-repeat;
+}
+
