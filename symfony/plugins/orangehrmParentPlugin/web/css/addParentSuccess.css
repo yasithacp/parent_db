@@ -112,8 +112,17 @@ form#frmAddCandidate div label.appDate label.error{
     margin-top: 11px;
 }
 
-#addParent_dadName, #addParent_momName {
+#addParent_dadName, #addParent_momName, #addParent_guardianName, #addParent_emergencyContactName {
     width: 300px;
 }
 
+.subHeading{
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+.toggleButton {
+    cursor: pointer;
+}

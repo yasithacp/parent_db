@@ -7,7 +7,7 @@
 <?php use_javascript('../../../scripts/jquery/ui/ui.core.js'); ?>
 <?php use_javascript('../../../scripts/jquery/ui/ui.dialog.js'); ?>
 <?php use_stylesheet('../orangehrmParentPlugin/css/addParentSuccess'); ?>
-<?php use_javascript('../orangehrmParentPlugin/js/addCandidateSuccess'); ?>
+<?php use_javascript('../orangehrmParentPlugin/js/addParentSuccess'); ?>
 <?php $browser = $_SERVER['HTTP_USER_AGENT']; ?>
 <?php if (strstr($browser, "MSIE 8.0")): ?>
     <?php $keyWrdWidth = 'width: 276px' ?>
@@ -31,338 +31,363 @@
 
             <?php echo $form['_csrf_token']; ?>
             <br class="clear"/>
+            <span class="subHeading">Student's Information <lable id="studentTog" class="toggleButton">[-]</lable></span>
+            <br class="clear"/>
+            <br class="clear"/>
 
-            <div>
-                <?php echo $form['stuSurname']->renderLabel(__('Student Surname')); ?>
-                <?php echo $form['stuSurname']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
+            <div id="studentTogDiv">
+                <div>
+                    <?php echo $form['stuSurname']->renderLabel(__('Student Surname')); ?>
+                    <?php echo $form['stuSurname']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['stuOtherNames']->renderLabel(__('Student Other Names')); ?>
+                    <?php echo $form['stuOtherNames']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['curClass']->renderLabel(__('Current Class')); ?>
+                    <?php echo $form['curClass']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dateOfBirth']->renderLabel(__('Date of Birth')); ?>
+                    <?php echo $form['dateOfBirth']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['religion']->renderLabel(__('Religion')); ?>
+                    <?php echo $form['religion']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['stuAdmissionNo']->renderLabel(__('Student Admission No')); ?>
+                    <?php echo $form['stuAdmissionNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['classOfAdmission']->renderLabel(__('Class of Admission')); ?>
+                    <?php echo $form['classOfAdmission']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['race']->renderLabel(__('Race')); ?>
+                    <?php echo $form['race']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dateOfAdmission']->renderLabel(__('Date of Admission')); ?>
+                    <?php echo $form['dateOfAdmission']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['house']->renderLabel(__('House')); ?>
+                    <?php echo $form['house']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['medium']->renderLabel(__('Medium')); ?>
+                    <?php echo $form['medium']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['resAddress']->renderLabel(__('Residential Address')); ?>
+                    <?php echo $form['resAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['scholarFromOther']->renderLabel(__('Scholarship holder from other school ')); ?>
+                    <?php echo $form['scholarFromOther']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['scholarFromRoyal']->renderLabel(__('Scholarship Holder from this school')); ?>
+                    <?php echo $form['scholarFromRoyal']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['noScholar']->renderLabel(__('Not a Scholarship Holder')); ?>
+                    <?php echo $form['noScholar']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
             </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['stuOtherNames']->renderLabel(__('Student Other Names')); ?>
-                <?php echo $form['stuOtherNames']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
+            <div class="hrLine"></div>
+
+            <span class="subHeading">Father's Information <lable id="fatherTog" class="toggleButton">[+]</lable></span>
+            <br class="clear"/>
+            <br class="clear"/>
+
+            <div id="dadTogDiv">
+                <div>
+                    <?php echo $form['dadName']->renderLabel(__('Name with initials')); ?>
+                    <?php echo $form['dadName']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadOccupation']->renderLabel(__('Occupation')); ?>
+                    <?php echo $form['dadOccupation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div id="dadOtherOccuDiv">
+                    <?php echo $form['dadOtherOccupation']->renderLabel(__('If Other, Please specify')); ?>
+                    <?php echo $form['dadOtherOccupation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadDesignation']->renderLabel(__('Designation')); ?>
+                    <?php echo $form['dadDesignation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadCompany']->renderLabel(__('Name of the Company')); ?>
+                    <?php echo $form['dadCompany']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['isFatherOldBoy']->renderLabel(__('Father is an Old Boy')); ?>
+                    <?php echo $form['isFatherOldBoy']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadObMemId']->renderLabel(__('OB Membership ID')); ?>
+                    <?php echo $form['dadObMemId']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadOfficeAddress']->renderLabel(__('Present Office Address')); ?>
+                    <?php echo $form['dadOfficeAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadMobileNo']->renderLabel(__('Mobile Number')); ?>
+                    <?php echo $form['dadMobileNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadOfficeNo']->renderLabel(__('Office Number')); ?>
+                    <?php echo $form['dadOfficeNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadResidentialNo']->renderLabel(__('Residential Number')); ?>
+                    <?php echo $form['dadResidentialNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['dadEmail']->renderLabel(__('Email')); ?>
+                    <?php echo $form['dadEmail']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
             </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['curClass']->renderLabel(__('Current Class')); ?>
-                <?php echo $form['curClass']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
+            <div class="hrLine"></div>
+
+            <span class="subHeading">Mother's Information <lable id="motherTog" class="toggleButton">[+]</lable></span>
+            <br class="clear"/>
+            <br class="clear"/>
+
+            <div id="momTogDiv">
+                <div>
+                    <?php echo $form['momName']->renderLabel(__('Name with initials')); ?>
+                    <?php echo $form['momName']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momOccupation']->renderLabel(__('Occupation')); ?>
+                    <?php echo $form['momOccupation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div id="momOtherOccuDiv">
+                    <?php echo $form['momOtherOccupation']->renderLabel(__('If Other, Please specify')); ?>
+                    <?php echo $form['momOtherOccupation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momDesignation']->renderLabel(__('Designation')); ?>
+                    <?php echo $form['momDesignation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momCompany']->renderLabel(__('Name of the Company')); ?>
+                    <?php echo $form['momCompany']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momAdmissionNumber']->renderLabel(__('Admission Number')); ?>
+                    <?php echo $form['momAdmissionNumber']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momOfficeAddress']->renderLabel(__('Present Office Address')); ?>
+                    <?php echo $form['momOfficeAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momMobileNo']->renderLabel(__('Mobile Number')); ?>
+                    <?php echo $form['momMobileNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momOfficeNo']->renderLabel(__('Office Number')); ?>
+                    <?php echo $form['momOfficeNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momResidentialNo']->renderLabel(__('Residential Number')); ?>
+                    <?php echo $form['momResidentialNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['momEmail']->renderLabel(__('Email')); ?>
+                    <?php echo $form['momEmail']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
             </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dateOfBirth']->renderLabel(__('Date of Birth')); ?>
-                <?php echo $form['dateOfBirth']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['religion']->renderLabel(__('Religion')); ?>
-                <?php echo $form['religion']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['stuAdmissionNo']->renderLabel(__('Student Admission No')); ?>
-                <?php echo $form['stuAdmissionNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['classOfAdmission']->renderLabel(__('Class of Admission')); ?>
-                <?php echo $form['classOfAdmission']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['race']->renderLabel(__('Race')); ?>
-                <?php echo $form['race']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dateOfAdmission']->renderLabel(__('Date of Admission')); ?>
-                <?php echo $form['dateOfAdmission']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['house']->renderLabel(__('House')); ?>
-                <?php echo $form['house']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['medium']->renderLabel(__('Medium')); ?>
-                <?php echo $form['medium']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['resAddress']->renderLabel(__('Residential Address')); ?>
-                <?php echo $form['resAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['scholarFromOther']->renderLabel(__('Scholarship holder from other school ')); ?>
-                <?php echo $form['scholarFromOther']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['scholarFromRoyal']->renderLabel(__('Scholarship Holder from this school')); ?>
-                <?php echo $form['scholarFromRoyal']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['noScholar']->renderLabel(__('Not a Scholarship Holder')); ?>
-                <?php echo $form['noScholar']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
 
             <div class="hrLine"></div>
 
-            <div>
-                <?php echo $form['dadName']->renderLabel(__('Father\'s Name with initials')); ?>
-                <?php echo $form['dadName']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadOccupation']->renderLabel(__('Occupation')); ?>
-                <?php echo $form['dadOccupation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadOtherOccupation']->renderLabel(__('If Other, Please specify')); ?>
-                <?php echo $form['dadOtherOccupation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadDesignation']->renderLabel(__('Designation')); ?>
-                <?php echo $form['dadDesignation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadCompany']->renderLabel(__('Name of the Company')); ?>
-                <?php echo $form['dadCompany']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['isFatherOldBoy']->renderLabel(__('Father is an Old Boy')); ?>
-                <?php echo $form['isFatherOldBoy']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadObMemId']->renderLabel(__('OB Membership ID')); ?>
-                <?php echo $form['dadObMemId']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadOfficeAddress']->renderLabel(__('Father\'s Present Office Address')); ?>
-                <?php echo $form['dadOfficeAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadMobileNo']->renderLabel(__('Father\'s Mobile Number')); ?>
-                <?php echo $form['dadMobileNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadOfficeNo']->renderLabel(__('Father\'s Office Number')); ?>
-                <?php echo $form['dadOfficeNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadResidentialNo']->renderLabel(__('Father\'s Residential Number')); ?>
-                <?php echo $form['dadResidentialNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['dadEmail']->renderLabel(__('Father\'s Email')); ?>
-                <?php echo $form['dadEmail']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
+            <span class="subHeading">Guardian's Information <lable id="guardianTog" class="toggleButton">[+]</lable></span>
+            <br class="clear"/>
+            <br class="clear"/>
 
+            <div id="guardTogDiv">
+                <div>
+                    <?php echo $form['guardianName']->renderLabel(__('Name')); ?>
+                    <?php echo $form['guardianName']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianDesignation']->renderLabel(__('Designation')); ?>
+                    <?php echo $form['guardianDesignation']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianRelationship']->renderLabel(__('Relationship')); ?>
+                    <?php echo $form['guardianRelationship']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianHomeAddress']->renderLabel(__('Home Address')); ?>
+                    <?php echo $form['guardianHomeAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianOfficeAddress']->renderLabel(__('Office Address')); ?>
+                    <?php echo $form['guardianOfficeAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianMobileNo']->renderLabel(__('Mobile')); ?>
+                    <?php echo $form['guardianMobileNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianOfficeNo']->renderLabel(__('Office Number')); ?>
+                    <?php echo $form['guardianOfficeNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianResidentialNo']->renderLabel(__('Residential Number')); ?>
+                    <?php echo $form['guardianResidentialNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['guardianEmail']->renderLabel(__('Email')); ?>
+                    <?php echo $form['guardianEmail']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+            </div>
             <div class="hrLine"></div>
 
-            <div>
-                <?php echo $form['momName']->renderLabel(__('Mother\'s Name with initials')); ?>
-                <?php echo $form['momName']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momOccupation']->renderLabel(__('Occupation')); ?>
-                <?php echo $form['momOccupation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momOtherOccupation']->renderLabel(__('If Other, Please specify')); ?>
-                <?php echo $form['momOtherOccupation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momDesignation']->renderLabel(__('Designation')); ?>
-                <?php echo $form['momDesignation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momCompany']->renderLabel(__('Name of the Company')); ?>
-                <?php echo $form['momCompany']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momAdmissionNumber']->renderLabel(__('Admission Number')); ?>
-                <?php echo $form['momAdmissionNumber']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momOfficeAddress']->renderLabel(__('Mother\'s Present Office Address')); ?>
-                <?php echo $form['momOfficeAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momMobileNo']->renderLabel(__('Mother\'s Mobile Number')); ?>
-                <?php echo $form['momMobileNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momOfficeNo']->renderLabel(__('Mother\'s Office Number')); ?>
-                <?php echo $form['momOfficeNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momResidentialNo']->renderLabel(__('Mother\'s Residential Number')); ?>
-                <?php echo $form['momResidentialNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['momEmail']->renderLabel(__('Mother\'s Email')); ?>
-                <?php echo $form['momEmail']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
+            <span class="subHeading">Emergency Contact's Information <lable id="emergeTog" class="toggleButton">[+]</lable></span>
+            <br class="clear"/>
+            <br class="clear"/>
 
-            <div class="hrLine"></div>
-
-            <div>
-                <?php echo $form['guardianName']->renderLabel(__('Guardian\'s Name')); ?>
-                <?php echo $form['guardianName']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
+            <div id="emergeTogDiv">
+                <div>
+                    <?php echo $form['emergencyContactName']->renderLabel(__('Name')); ?>
+                    <?php echo $form['emergencyContactName']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['emergencyContactRelationship']->renderLabel(__('Relationship')); ?>
+                    <?php echo $form['emergencyContactRelationship']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['emergencyContactAddress']->renderLabel(__('Address')); ?>
+                    <?php echo $form['emergencyContactAddress']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['emergencyContactMobileNo']->renderLabel(__('Mobile No')); ?>
+                    <?php echo $form['emergencyContactMobileNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['emergencyContactOfficeNo']->renderLabel(__('Office No')); ?>
+                    <?php echo $form['emergencyContactOfficeNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
+                <div>
+                    <?php echo $form['emergencyContactResidentialNo']->renderLabel(__('Email')); ?>
+                    <?php echo $form['emergencyContactResidentialNo']->render(array("class" => "formInputText")); ?>
+                    <div class="errorHolder below"></div>
+                </div>
+                <br class="clear" />
             </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianDesignation']->renderLabel(__('Guardian\'s Designation')); ?>
-                <?php echo $form['guardianDesignation']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianRelationship']->renderLabel(__('Guardian\'s Relationship')); ?>
-                <?php echo $form['guardianRelationship']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianHomeAddress']->renderLabel(__('Guardian\'s Home Address')); ?>
-                <?php echo $form['guardianHomeAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianOfficeAddress']->renderLabel(__('Guardian\'s Office Address')); ?>
-                <?php echo $form['guardianOfficeAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianMobileNo']->renderLabel(__('Guardian\'s Mobile')); ?>
-                <?php echo $form['guardianMobileNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianOfficeNo']->renderLabel(__('Guardian\'s Office Number')); ?>
-                <?php echo $form['guardianOfficeNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianResidentialNo']->renderLabel(__('Guardian\'s Residential Number')); ?>
-                <?php echo $form['guardianResidentialNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['guardianEmail']->renderLabel(__('Guardian\'s Email')); ?>
-                <?php echo $form['guardianEmail']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-
-            <div class="hrLine"></div>
-
-            <div>
-                <?php echo $form['emergencyContactName']->renderLabel(__('Emergency Contact\'s Name')); ?>
-                <?php echo $form['emergencyContactName']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['emergencyContactRelationship']->renderLabel(__('Emergency Contact\'s Relationship')); ?>
-                <?php echo $form['emergencyContactRelationship']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['emergencyContactAddress']->renderLabel(__('Emergency Contact\'s Address')); ?>
-                <?php echo $form['emergencyContactAddress']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['emergencyContactMobileNo']->renderLabel(__('Emergency Contact\'s Mobile No')); ?>
-                <?php echo $form['emergencyContactMobileNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['emergencyContactOfficeNo']->renderLabel(__('Emergency Contact\'s Office No')); ?>
-                <?php echo $form['emergencyContactOfficeNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-            <div>
-                <?php echo $form['emergencyContactResidentialNo']->renderLabel(__('Emergency Contact\'s Email')); ?>
-                <?php echo $form['emergencyContactResidentialNo']->render(array("class" => "formInputText")); ?>
-                <div class="errorHolder below"></div>
-            </div>
-            <br class="clear" />
-
 
             <div class="formbuttons">
                     <input type="button" class="savebutton" name="btnSave" id="btnSave"
