@@ -654,15 +654,15 @@ if ($arrAllRights[Recruit]['view']) {
 
 /* Start ESS menu */
 if ($_SESSION['isAdmin'] != 'Yes') {
-//    $menuItem = new MenuItem("ess", $i18n->__('My Info'), './symfony/web/index.php/pim/viewPersonalDetails?empNumber=' . $_SESSION['empID'], "rightMenu");
-//
-//    $menuItem->setCurrent($_GET['menu_no_top'] == "ess");
-//    $enableEssMenu = false;
-//    if ($_GET['menu_no_top'] == "ess") {
-//        $enableEssMenu = true;
-//    }
-//
-//    $menu[] = $menuItem;
+    $menuItem = new MenuItem("ess", $i18n->__('My Info'), './symfony/web/index.php/pim/viewPersonalDetails?empNumber=' . $_SESSION['empID'], "rightMenu");
+
+    $menuItem->setCurrent($_GET['menu_no_top'] == "ess");
+    $enableEssMenu = false;
+    if ($_GET['menu_no_top'] == "ess") {
+        $enableEssMenu = true;
+    }
+
+    $menu[] = $menuItem;
 }
 
 

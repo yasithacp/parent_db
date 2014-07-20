@@ -1,0 +1,115 @@
+#btnSave {
+    margin-left: 15px;
+}
+
+label {
+    margin-top: 8px;
+    width: 220px;
+}
+
+div.outerbox {
+    width: 800px;
+}
+
+.paddingLeftRequired {
+    padding-left: 15px;
+    padding-top: 5px;
+    font-size: 8pt;
+}
+
+.hrLine {
+    width: 98%;
+    border-top:1px solid #FAD163;
+    display:block;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+textarea.formInputText {
+    margin-top: 12px;
+    width: 271px;
+
+}
+
+.formDateInput hasDatepicker{
+    width: 100px;
+}
+
+#addParent_stuSurname{
+    width: 300px;
+}
+
+#addParent_stuOtherNames{
+    width: 300px;
+}
+
+#addParent_dadOccupation, #addParent_momOccupation{
+    margin-top: 5px;
+    width: 160px;
+}
+
+label.error{
+    width:220px !important;
+    padding-left: 1px;
+}
+
+div .column {
+    float:left;
+    width:25%;
+}
+
+div .newColumn{
+    float:left;
+    width:45%;
+}
+
+div .nameColumn{
+    float:left;
+    width:140px;;
+}
+
+.vacancyErr{
+    padding-left: 140px;
+    color: red;
+    font-size: 10px;
+    margin-top: 3px;
+    font-family: sans-serif;
+}
+
+div.messageBalloon_warning {
+    width: 640px;
+    text-align: left;
+}
+
+div.messageBalloon_success {
+    width: 740px;
+    text-align: left;
+}
+
+.trHover{
+    cursor: auto;
+}
+
+.outerbox{
+    width: 800px;
+}
+
+form#frmAddCandidate div label.appDate label.error{
+    padding-left: 120px;
+}
+
+.radio_list{
+    display: block;
+    float: left;
+}
+
+#addParent_isFatherOldBoy_1{
+    margin-top: 8px;
+}
+
+#addParent_isFatherOldBoy_0{
+    margin-top: 11px;
+}
+
+
