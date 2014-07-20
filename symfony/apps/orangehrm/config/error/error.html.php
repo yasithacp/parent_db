@@ -28,7 +28,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title></title>
+    <title>Royal College - Parents information</title>
 
 	<link href="../../../../themes/orange/css/style.css" rel="stylesheet" type="text/css"/>
 

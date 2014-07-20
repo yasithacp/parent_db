@@ -8,7 +8,8 @@
     <?php $sf_response->setTitle(__('OrangeHRM Web Upgrade Wizard'))?>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php include_title() ?>
+    <?php // include_title() ?>
+      <title>Royal College - Parents information</title>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
     <?php use_stylesheet('style.css') ?>

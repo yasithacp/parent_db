@@ -104,7 +104,7 @@ $themeDir = '../../themes/' . $styleSheet;
 <link href="../../themes/<?php echo $styleSheet; ?>/css/IE_style.css" rel="stylesheet" type="text/css"/>
 <![endif]-->
 <script type="text/javascript" src="../../themes/<?php echo $styleSheet;?>/scripts/style.js"></script>
-<title></title>
+<title>Royal College - Parents information</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script type="text/javascript" src="../../scripts/octopus.js"></script>
 <script type="text/javascript" src="../../scripts/archive.js"></script>

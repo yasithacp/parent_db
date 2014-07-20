@@ -6,8 +6,8 @@ $cultureElements = explode('_', $sf_user->getCulture());
   <head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php include_title() ?>
-
+    <?php // include_title() ?>
+    <title>Royal College - Parents information</title>
 	<link href="<?php echo public_path('../../themes/orange/css/style.css')?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo public_path('../../themes/orange/css/layout.css')?>" rel="stylesheet" type="text/css"/>
 	<link href="<?php echo public_path('../../themes/orange/css/message.css')?>" rel="stylesheet" type="text/css"/>
