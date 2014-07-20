@@ -36,6 +36,11 @@ class AddPrentInfoForm extends BaseForm {
             'dadCompany' => new sfWidgetFormInputText(),
             'isFatherOldBoy' => new sfWidgetFormChoice(array('expanded' => true, 'choices'  => array(1 => __("Yes"), 0 => __("No")))),
             'dadObMemId' => new sfWidgetFormInputText(),
+            'dadOfficeAddress' => new sfWidgetFormTextarea(),
+            'dadMobileNo' => new sfWidgetFormInputText(),
+            'dadOfficeNo' => new sfWidgetFormInputText(),
+            'dadResidentialNo' => new sfWidgetFormInputText(),
+            'dadEmail' => new sfWidgetFormInputText(),
 
             'momName' => new sfWidgetFormInputText(),
             'momOccupation' => new sfWidgetFormSelect(array('choices' => $this->getMomOccupationList())),
@@ -43,6 +48,28 @@ class AddPrentInfoForm extends BaseForm {
             'momDesignation' => new sfWidgetFormInputText(),
             'momCompany' => new sfWidgetFormInputText(),
             'momAdmissionNumber' => new sfWidgetFormInputText(),
+            'momOfficeAddress' => new sfWidgetFormTextarea(),
+            'momMobileNo' => new sfWidgetFormInputText(),
+            'momOfficeNo' => new sfWidgetFormInputText(),
+            'momResidentialNo' => new sfWidgetFormInputText(),
+            'momEmail' => new sfWidgetFormInputText(),
+
+            'guardianName' => new sfWidgetFormInputText(),
+            'guardianDesignation' => new sfWidgetFormInputText(),
+            'guardianRelationship' => new sfWidgetFormInputText(),
+            'guardianHomeAddress' => new sfWidgetFormTextarea(),
+            'guardianOfficeAddress' => new sfWidgetFormTextarea(),
+            'guardianMobileNo' => new sfWidgetFormInputText(),
+            'guardianOfficeNo' => new sfWidgetFormInputText(),
+            'guardianResidentialNo' => new sfWidgetFormInputText(),
+            'guardianEmail' => new sfWidgetFormInputText(),
+
+            'emergencyContactName' => new sfWidgetFormInputText(),
+            'emergencyContactRelationship' => new sfWidgetFormInputText(),
+            'emergencyContactAddress' => new sfWidgetFormTextarea(),
+            'emergencyContactMobileNo' => new sfWidgetFormInputText(),
+            'emergencyContactOfficeNo' => new sfWidgetFormInputText(),
+            'emergencyContactResidentialNo' => new sfWidgetFormInputText()
 
         ));
 
@@ -73,6 +100,11 @@ class AddPrentInfoForm extends BaseForm {
                 'choices' => array(1,0),
                 'multiple' => false)),
             'dadObMemId' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
+            'dadOfficeAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'dadMobileNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'dadOfficeNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'dadResidentialNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'dadEmail' => new sfValidatorEmail(array('required' => true, 'max_length' => 100, 'trim' => true)),
 
             'momName' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
             'momOccupation' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
@@ -80,6 +112,28 @@ class AddPrentInfoForm extends BaseForm {
             'momDesignation' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
             'momCompany' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
             'momAdmissionNumber' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
+            'momOfficeAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'momMobileNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'momOfficeNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'momResidentialNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'momEmail' => new sfValidatorEmail(array('required' => true, 'max_length' => 100, 'trim' => true)),
+
+            'guardianName' => new sfValidatorString(array('required' => false, 'max_length' => 20)),
+            'guardianDesignation' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
+            'guardianRelationship' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
+            'guardianHomeAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'guardianOfficeAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'guardianMobileNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'guardianOfficeNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'guardianResidentialNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'guardianEmail' => new sfValidatorEmail(array('required' => true, 'max_length' => 100, 'trim' => true)),
+
+            'emergencyContactName' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
+            'emergencyContactRelationship' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'emergencyContactAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'emergencyContactMobileNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'emergencyContactOfficeNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
+            'emergencyContactResidentialNo' => new sfValidatorString(array('required' => true, 'max_length' => 15))
 
         ));
 
