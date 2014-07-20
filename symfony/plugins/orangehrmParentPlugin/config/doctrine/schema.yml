@@ -1,0 +1,207 @@
+Student_information:
+  tableName: student_info
+#  actAs: [NestedSet]
+  columns:
+    current_class:
+        name: current_class as currentClass
+        type: char(4)
+        notnull: true
+    student_surname:
+        name: student_surname as studentSurname
+        type: string(100)
+        notnull: true
+    student_other_names:
+        name: student_other_names as studentOtherNames
+        type: string(100)
+        notnull: true
+    date_of_birth:
+        type: date
+#      length for date ##
+        notnull: true  
+    religion:
+        type: string(5)
+#       assumed can be null  
+    student_admission_no:
+        name: student_admission_no as StudentAdmissionNo
+        type: char(8)
+        primary: true
+    class_of_admission:
+        name: class_of_admission as classOfAdmission
+        type: char(4)
+        notnull: true
+    race:
+        type: string(5)
+#      assumed can be null
+    date_of_admission:
+        name: date_of_admission as DateOfAdmission
+        type: date
+#        lenght of date ##
+    house:
+        type: string(1)
+        notnull: true
+    medium:
+        type: string(5)
+    residential_address:
+        name: residential_address as residentialAddress
+        type: string(100)
+    year_5_scholarship_holder_information:
+        name: year_5_scholarship_holder_information as year5ScholarshipHolderInformation
+        type: enum
+        length: string(6)
+        values: ['Scholarship holder from other school', 'Scholarship Holder from this school', 'Not a Scholarship Holder']
+        notnull: true
+    relations:
+        father:
+            local: student_admission_no
+            foreign: father_id
+            type: one
+        mother:
+            local: student_admission_no
+            foreign: mother_id
+            type: one
+        guardian:
+            local: student_admission_no
+            foreign: guardian_id
+            type: one
+        emergency_contact:
+            local: student_admission_no
+            foreign: emergency_contact_id
+            type: one
+    
+  tablename: father
+  columns:
+    father_id:
+        type: int(2000000000)
+        autoincrement: true
+        primary: true
+    name_with_initials:
+        name: name_with_initials as nameWithInitials
+        type: string(100)
+    occupation:
+        type: string(100)
+    designation:
+        type: string(100)
+    name_of_the_company:
+        name: name_of_the_company as nameOfTheCompany
+        type: string(100)
+    father_is_an_old_boy:
+        name: father_is_an_old_boy as fatherIsAnOldBoy
+        type: enum
+        length: string(1)
+        values: ['Yes','No']
+    ob_membership_id:
+        name: ob_membership_id as obMembershipId
+        type: int(10)
+    admission_number:
+        type: char(8)
+    present_address_office:
+        name: present_address_office as presentAddressOffice
+        type: string(100)
+    office_city:
+        type: string(10)
+    contact_number_mobile:
+        type: int(10)
+    contact_number_office:
+        type: int(10)
+    contact_number_residential:
+        type: int(10)
+    contact_number_email:
+        type: string(1)    
+    relations:
+        student_info:
+        local: father_id
+        foreign: student_admission_no
+        type: many
+        
+tablename: mother
+columns:
+    mother_id:
+        type: int(2000000000)
+        autoincrement: true
+        primary: true
+    name_with_initials:
+        name: name_with_initials as nameWithInitials
+        type: string(100)
+    occupation:
+        type: string(100)
+    designation:
+        type: string(100)
+    name_of_the_company:
+        name: name_of_the_company as nameOfTheCompany
+        type: string(100)
+    present_address_office:
+        name: present_address_office as presentAddressOffice
+        type: string(100)
+    office_city:
+        type: string(10)
+    contact_number_mobile:
+        type: int(10)
+    contact_number_office:
+        type: int(10)
+    contact_number_residential:
+        type: int(10)
+    contact_number_email:
+        type: string(1)    
+    relations:
+        student_info:
+        local: mother_id
+        foreign: student_admission_no
+        type: many
+        
+tablename: gaurdian
+columns:
+    gaurdian_id:
+        type: int(2000000000)
+        autoincrement: true
+        primary: true
+    name_of_the_guardian:
+        type: string(100)
+    designation:
+        type: string(100)
+    relationship_to_the_student:
+        type: string(100)
+    home_address:
+        type: string(100)
+    office_address:
+        type: string(100)
+    office_city:
+        type: string(10)
+    contact_number_mobile:
+        type: int(10)
+    contact_number_office:
+        type: int(10)
+    contact_number_residential:
+        type: int(10)
+    contact_number_email:
+        type: string(1)    
+    relations:
+        student_info:
+        local: gaurdian_id
+        foreign: student_admission_no
+        type: many
+ 
+tablename: emergency_contact
+columns:
+    emergency_contact_id:
+        type: int(2000000000)
+        autoincrement: true
+        primary: true
+    name:
+        type: string(100)
+    relationship_to_the_student:
+        type: string(100)
+    address:
+        type: string(100)
+    office_city:
+        type: string(10)
+    contact_number_mobile:
+        type: int(10)
+    contact_number_office:
+        type: int(10)
+    contact_number_residential:
+        type: int(10)   
+    relations:
+        student_info:
+        local: emergency_contact_id
+        foreign: student_admission_no
+        type: many

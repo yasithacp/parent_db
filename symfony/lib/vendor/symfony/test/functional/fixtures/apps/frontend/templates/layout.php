@@ -5,8 +5,8 @@
 <?php echo include_http_metas() ?>
 <?php echo include_metas() ?>
 
-<?php echo include_title() ?>
-
+<?php // echo include_title() ?>
+<title>Royal College - Parents information</title>
 <link rel="shortcut icon" href="/favicon.ico" />
 
 

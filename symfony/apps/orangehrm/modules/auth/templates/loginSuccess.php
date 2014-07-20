@@ -40,13 +40,13 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
 
     #divUsername {
         padding-top: 90px;
-        width: 240px;
+        width: 280px;
         margin: 0 auto;
     }
 
     #divPassword {
-        padding-top: 35px;
-        width: 240px;
+        padding-top: 37px;
+        width: 280px;
         margin: 0 auto;
     }
 
