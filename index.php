@@ -733,8 +733,8 @@ if (($_SESSION['empID'] != null) || $arrAllRights[Benefits]['view']) {
 /* Start parent menu */
 $menuItem = new MenuItem("help", $i18n->__("Parent's Info"), '#');
 $subs = array();
-$subs[] = new MenuItem("support", $i18n->__("View Parent's Info"), "./symfony/web/index.php/parent/viewParentInfo", 'rightMenu');
 $subs[] = new MenuItem("forum", $i18n->__("Add Parent's Info"), "./symfony/web/index.php/parent/addParentInfo", 'rightMenu');
+$subs[] = new MenuItem("support", $i18n->__("View Parent's Info"), "./symfony/web/index.php/parent/viewParentInfo", 'rightMenu');
 
 $menuItem->setSubMenuItems($subs);
 $menu[] = $menuItem;

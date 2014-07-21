@@ -195,4 +195,8 @@ class AddPrentInfoForm extends BaseForm {
         return $choices;
 
     }
+
+    public function save() {
+
+    }
 }

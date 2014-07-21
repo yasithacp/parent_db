@@ -27,7 +27,7 @@
     <div class="outerbox">
 
         <div class="mainHeading"><h2 id="addParentHeading"><?php echo "Add Parent Information"; ?></h2></div>
-        <form name="frmAddParent" id="frmAddParent" method="post" action="<?php echo url_for('recruitment/addParent'); ?>">
+        <form name="frmAddParent" id="frmAddParent" method="post" action="<?php echo url_for('parent/addParentInfo'); ?>">
 
             <?php echo $form['_csrf_token']; ?>
             <br class="clear"/>
