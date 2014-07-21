@@ -2,206 +2,194 @@ Student_information:
   tableName: student_info
 #  actAs: [NestedSet]
   columns:
+    student_id:
+        type: int(2000000000)
+        autoincrement: true
+        primary: true
     current_class:
-        name: current_class as currentClass
-        type: char(4)
+        name: current_class as curClass
+        type: varchar(10)
         notnull: true
     student_surname:
-        name: student_surname as studentSurname
-        type: string(100)
+        name: student_surname as stuSurname
+        type: varchar(35)
         notnull: true
     student_other_names:
-        name: student_other_names as studentOtherNames
-        type: string(100)
-        notnull: true
+        name: student_other_names as stuOtherNames
+        type: varchar(50)
     date_of_birth:
+        name: date_of_birth as dateOfBirth
         type: date
-#      length for date ##
         notnull: true  
     religion:
-        type: string(5)
-#       assumed can be null  
+        type: varchar(20)
+        notnull: true
     student_admission_no:
-        name: student_admission_no as StudentAdmissionNo
-        type: char(8)
-        primary: true
+        name: student_admission_no as stuAdmissionNo
+        type: varchar(10)
+        notnull: true
     class_of_admission:
         name: class_of_admission as classOfAdmission
-        type: char(4)
+        type: varchar(10)
         notnull: true
     race:
-        type: string(5)
-#      assumed can be null
+        type: varchar(20)
+        notnull: true
     date_of_admission:
-        name: date_of_admission as DateOfAdmission
+        name: date_of_admission as dateOfAdmission
         type: date
-#        lenght of date ##
     house:
-        type: string(1)
+        type: varchar(20)
         notnull: true
     medium:
-        type: string(5)
-    residential_address:
-        name: residential_address as residentialAddress
-        type: string(100)
-    year_5_scholarship_holder_information:
-        name: year_5_scholarship_holder_information as year5ScholarshipHolderInformation
-        type: enum
-        length: string(6)
-        values: ['Scholarship holder from other school', 'Scholarship Holder from this school', 'Not a Scholarship Holder']
+        type: varchar(10)
         notnull: true
-    relations:
-        father:
-            local: student_admission_no
-            foreign: father_id
-            type: one
-        mother:
-            local: student_admission_no
-            foreign: mother_id
-            type: one
-        guardian:
-            local: student_admission_no
-            foreign: guardian_id
-            type: one
-        emergency_contact:
-            local: student_admission_no
-            foreign: emergency_contact_id
-            type: one
-    
-  tablename: father
-  columns:
-    father_id:
-        type: int(2000000000)
-        autoincrement: true
-        primary: true
-    name_with_initials:
-        name: name_with_initials as nameWithInitials
-        type: string(100)
-    occupation:
-        type: string(100)
-    designation:
-        type: string(100)
+    residential_address:
+        name: residential_address as resAddress
+        type: varchar(255)
+        notnull: true
+#    year_5_scholarship_holder_information:
+#        name: year_5_scholarship_holder_information as year5ScholarshipHolderInformation
+#        type: enum
+#        length: varchar(6)
+#        values: ['Scholarship holder from other school', 'Scholarship Holder from this school', 'Not a Scholarship Holder']
+#        notnull: true
+################################################################################
+    father_name:
+        name: father_name as dadName
+        type: varchar(100)
+        notnull: true
+    father_occupation:
+        name: father_occupation as dadOccupation
+        type: varchar(50)
+        notnull: true
+#        if select other what will be the value here ???
+    father_other_occupation:
+        name: father_other_occupation as dadOtherOccupation
+        type: varchar(50)
+    father_designation:
+        name: father_designation as dadDesignation
+        type: varchar(50)
+    father_company:
+        name: father_company as dadCompany
+        type: varchar(50)
+    isFatherOldBoy:
+        type: boolean
+    father_ob_membership_id:
+        name: dad_ob_membership_id as dadObMemId
+        type: int(50)
+#   father_admission_number:
+#        type: varchar(50)
+    father_office_address:
+        name: father_office_address as dadOfficeAddress
+        type: varchar(255)
+#    office_city:
+#        type: varchar(10)
+    father_contact_number_mobile:
+        name: father_contact_number_mobile as dadMobileNo
+        type: int(10)
+#        defined type is string (15)
+    father_contact_number_office:
+        name: father_contact_number_office as dadOfficeNo
+        type: int(10)
+#        defined type is string (15)
+    father_contact_number_residential:
+        name: father_contact_number_residential as dadResidentialNo
+        type: int(10)
+#        defined type is string (15)
+    father_email:
+        name: father_email as dadEmail
+        type: varchar(100)    
+################################################################################
+    mother_name:
+        name: mother_name as momName
+        type: varchar(100)
+        notnull: true
+    mother_occupation:
+        name: mother_occupation as momOccupation
+        type: varchar(50)
+        notnull: true
+    mother_designation:
+        type: varchar(50)
     name_of_the_company:
         name: name_of_the_company as nameOfTheCompany
-        type: string(100)
-    father_is_an_old_boy:
-        name: father_is_an_old_boy as fatherIsAnOldBoy
-        type: enum
-        length: string(1)
-        values: ['Yes','No']
-    ob_membership_id:
-        name: ob_membership_id as obMembershipId
+        type: varchar(20)
+    mother_admission_number:
+        name: mother_admission_number as momAdmissionNumber
+        type: varchar(20)
+    mother_office_address:
+        name: present_address_office as momOfficeAddress
+        type: varchar(255)
+    mother_contact_mobile:
+        name: mother_contact_mobile as momMobileNo
         type: int(10)
-    admission_number:
-        type: char(8)
-    present_address_office:
-        name: present_address_office as presentAddressOffice
-        type: string(100)
-    office_city:
-        type: string(10)
-    contact_number_mobile:
+#        defined type is string (15)
+    mother_contact_office:
+        name: mother_contact_office as momOfficeNo
         type: int(10)
-    contact_number_office:
+#        defined type is string (15)
+    mother_contact_residential:
+        name: mother_contact_residential as momResidentialNo
         type: int(10)
-    contact_number_residential:
+#        defined type is string (15)
+    mother_email:
+        name: mother_email as momEmail
+        type: varchar(100)    
+################################################################################
+    guardian_name:
+        name: guardian_name as guardianName
+        type: varchar(100)
+    guardian_designation:
+        name: guardian_designation as guardianDesignation
+        type: varchar(20)
+    guardian_relationship_to_student:
+        name: guardian_relationship_to_student as guardianRelationship
+        type: varchar(20)
+    guardian_address:
+        name: guardian_address as guardianHomeAddress
+        type: varchar(255)
+    guardian_office_address:
+        name: guardian_office_address as guardianOfficeAddress
+        type: varchar(255)
+    guardian_contact_mobile:
+        name: guardian_contact_mobile as guardianMobileNo
         type: int(10)
-    contact_number_email:
-        type: string(1)    
-    relations:
-        student_info:
-        local: father_id
-        foreign: student_admission_no
-        type: many
-        
-tablename: mother
-columns:
-    mother_id:
-        type: int(2000000000)
-        autoincrement: true
-        primary: true
-    name_with_initials:
-        name: name_with_initials as nameWithInitials
-        type: string(100)
-    occupation:
-        type: string(100)
-    designation:
-        type: string(100)
-    name_of_the_company:
-        name: name_of_the_company as nameOfTheCompany
-        type: string(100)
-    present_address_office:
-        name: present_address_office as presentAddressOffice
-        type: string(100)
-    office_city:
-        type: string(10)
-    contact_number_mobile:
+#        defined type is string (15)
+    guardian_contact_office:
+        name: guardian_contact_office as guardianOfficeNo
         type: int(10)
-    contact_number_office:
+#        defined type is string (15)
+    guardian_contact_residential:
+        name: guardian_contact_residential as guardianResidentialNo
         type: int(10)
-    contact_number_residential:
+#        defined type is string (15)
+    guardian_email:
+        name: guardian_email as guardianEmail
+        type: varchar(100)
+################################################################################
+    emergency_name:
+        name: emergency_name as emergencyContactName
+        type: varchar(100)
+        notnull: true
+    emergency_relationship_to_student:
+        name: emergency_relationship_to_student as emergencyContactRelationship
+        type: varchar(20)
+        notnull: true
+    emergency_address:
+        name: emergency_address as emergencyContactAddress
+        type: varchar(255)
+        notnull: true
+    emergency_contact_mobile:
+        name: emergency_contact_mobile as emergencyContactMobileNo
         type: int(10)
-    contact_number_email:
-        type: string(1)    
-    relations:
-        student_info:
-        local: mother_id
-        foreign: student_admission_no
-        type: many
-        
-tablename: gaurdian
-columns:
-    gaurdian_id:
-        type: int(2000000000)
-        autoincrement: true
-        primary: true
-    name_of_the_guardian:
-        type: string(100)
-    designation:
-        type: string(100)
-    relationship_to_the_student:
-        type: string(100)
-    home_address:
-        type: string(100)
-    office_address:
-        type: string(100)
-    office_city:
-        type: string(10)
-    contact_number_mobile:
+#        defined type is string (15)
+        notnull: true
+    emergency_contact_office:
+        name: emergency_contact_office as emergencyContactOfficeNo
         type: int(10)
-    contact_number_office:
+#        defined type is string (15)
+    emergency_contact_residential:
+        name: emergency_contact_residential as emergencyContactResidentialNo
         type: int(10)
-    contact_number_residential:
-        type: int(10)
-    contact_number_email:
-        type: string(1)    
-    relations:
-        student_info:
-        local: gaurdian_id
-        foreign: student_admission_no
-        type: many
- 
-tablename: emergency_contact
-columns:
-    emergency_contact_id:
-        type: int(2000000000)
-        autoincrement: true
-        primary: true
-    name:
-        type: string(100)
-    relationship_to_the_student:
-        type: string(100)
-    address:
-        type: string(100)
-    office_city:
-        type: string(10)
-    contact_number_mobile:
-        type: int(10)
-    contact_number_office:
-        type: int(10)
-    contact_number_residential:
-        type: int(10)   
-    relations:
-        student_info:
-        local: emergency_contact_id
-        foreign: student_admission_no
-        type: many
+#        defined type is string (15)
+        notnull: true
