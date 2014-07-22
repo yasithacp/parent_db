@@ -41,6 +41,8 @@ class addParentInfoAction extends sfAction {
                 } else {
                     $this->getUser()->setFlash('templateMessage', array('success', __('Successfully Added')));
                 }
+            } else {
+                print_r("Invalid Data");
             }
         }
     }
