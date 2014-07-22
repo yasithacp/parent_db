@@ -1,9 +1,9 @@
-Student_information:
-  tableName: student_info
+StudentParentInformation:
+  tableName: rc_student_parent_information
 #  actAs: [NestedSet]
   columns:
     student_id:
-        type: int(2000000000)
+        type: int(2000000)
         autoincrement: true
         primary: true
     current_class:
@@ -17,6 +17,7 @@ Student_information:
     student_other_names:
         name: student_other_names as stuOtherNames
         type: varchar(50)
+        notnull: true
     date_of_birth:
         name: date_of_birth as dateOfBirth
         type: date
@@ -48,12 +49,19 @@ Student_information:
         name: residential_address as resAddress
         type: varchar(255)
         notnull: true
-#    year_5_scholarship_holder_information:
-#        name: year_5_scholarship_holder_information as year5ScholarshipHolderInformation
-#        type: enum
-#        length: varchar(6)
-#        values: ['Scholarship holder from other school', 'Scholarship Holder from this school', 'Not a Scholarship Holder']
-#        notnull: true
+    scholar_from_other:
+        name: scholar_from_other as scholarFromOther
+        type: int(1)
+        default: 0
+    scholar_from_royal:
+        name: scholar_from_royal as scholarFromRoyal
+        type: int(1)
+        default: 0
+    no_scholar:
+        name: no_scholar as noScholar
+        type: int(1)
+        default: 0
+
 ################################################################################
     father_name:
         name: father_name as dadName
@@ -63,43 +71,48 @@ Student_information:
         name: father_occupation as dadOccupation
         type: varchar(50)
         notnull: true
-#        if select other what will be the value here ???
     father_other_occupation:
         name: father_other_occupation as dadOtherOccupation
         type: varchar(50)
+        default: null
     father_designation:
         name: father_designation as dadDesignation
         type: varchar(50)
+        default: null
     father_company:
         name: father_company as dadCompany
         type: varchar(50)
+        default: null
     isFatherOldBoy:
-        type: boolean
+        name: is_father_old_boy as isFatherOldBoy
+        type: int(1)
+        default: 0
     father_ob_membership_id:
-        name: dad_ob_membership_id as dadObMemId
+        name: father_ob_membership_id as dadObMemId
         type: int(50)
-#   father_admission_number:
-#        type: varchar(50)
+        default: null
     father_office_address:
         name: father_office_address as dadOfficeAddress
         type: varchar(255)
+        default: null
 #    office_city:
 #        type: varchar(10)
     father_contact_number_mobile:
         name: father_contact_number_mobile as dadMobileNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     father_contact_number_office:
         name: father_contact_number_office as dadOfficeNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     father_contact_number_residential:
         name: father_contact_number_residential as dadResidentialNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     father_email:
         name: father_email as dadEmail
-        type: varchar(100)    
+        type: varchar(100)
+        default: null
 ################################################################################
     mother_name:
         name: mother_name as momName
@@ -109,63 +122,79 @@ Student_information:
         name: mother_occupation as momOccupation
         type: varchar(50)
         notnull: true
-    mother_designation:
+    mother_other_occupation:
+        name: mother_other_occupation as momOtherOccupation
         type: varchar(50)
-    name_of_the_company:
-        name: name_of_the_company as nameOfTheCompany
+        default: null
+    mother_designation:
+        name: mother_designation as momDesignation
+        type: varchar(50)
+        default: null
+    mother_company:
+        name: mother_company as momCompany
         type: varchar(20)
+        default: null
     mother_admission_number:
         name: mother_admission_number as momAdmissionNumber
         type: varchar(20)
+        default: null
     mother_office_address:
         name: present_address_office as momOfficeAddress
         type: varchar(255)
+        default: null
     mother_contact_mobile:
         name: mother_contact_mobile as momMobileNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     mother_contact_office:
         name: mother_contact_office as momOfficeNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     mother_contact_residential:
         name: mother_contact_residential as momResidentialNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     mother_email:
         name: mother_email as momEmail
-        type: varchar(100)    
+        type: varchar(100)
+        default: null
 ################################################################################
     guardian_name:
         name: guardian_name as guardianName
         type: varchar(100)
+        default: null
     guardian_designation:
         name: guardian_designation as guardianDesignation
         type: varchar(20)
+        default: null
     guardian_relationship_to_student:
         name: guardian_relationship_to_student as guardianRelationship
         type: varchar(20)
+        default: null
     guardian_address:
         name: guardian_address as guardianHomeAddress
         type: varchar(255)
+        default: null
     guardian_office_address:
         name: guardian_office_address as guardianOfficeAddress
         type: varchar(255)
+        default: null
     guardian_contact_mobile:
         name: guardian_contact_mobile as guardianMobileNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     guardian_contact_office:
         name: guardian_contact_office as guardianOfficeNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     guardian_contact_residential:
         name: guardian_contact_residential as guardianResidentialNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     guardian_email:
         name: guardian_email as guardianEmail
         type: varchar(100)
+        default: null
 ################################################################################
     emergency_name:
         name: emergency_name as emergencyContactName
@@ -182,14 +211,12 @@ Student_information:
     emergency_contact_mobile:
         name: emergency_contact_mobile as emergencyContactMobileNo
         type: int(10)
-#        defined type is string (15)
         notnull: true
     emergency_contact_office:
         name: emergency_contact_office as emergencyContactOfficeNo
         type: int(10)
-#        defined type is string (15)
+        default: null
     emergency_contact_residential:
         name: emergency_contact_residential as emergencyContactResidentialNo
         type: int(10)
-#        defined type is string (15)
         notnull: true

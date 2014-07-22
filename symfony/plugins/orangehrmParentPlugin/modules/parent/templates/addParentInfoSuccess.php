@@ -37,73 +37,73 @@
 
             <div id="studentTogDiv">
                 <div>
-                    <?php echo $form['stuSurname']->renderLabel(__('Student Surname')); ?>
+                    <?php echo $form['stuSurname']->renderLabel(__('Student Surname') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['stuSurname']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['stuOtherNames']->renderLabel(__('Student Other Names')); ?>
+                    <?php echo $form['stuOtherNames']->renderLabel(__('Student Other Names') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['stuOtherNames']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['curClass']->renderLabel(__('Current Class')); ?>
+                    <?php echo $form['curClass']->renderLabel(__('Current Class') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['curClass']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['dateOfBirth']->renderLabel(__('Date of Birth')); ?>
+                    <?php echo $form['dateOfBirth']->renderLabel(__('Date of Birth') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['dateOfBirth']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['religion']->renderLabel(__('Religion')); ?>
+                    <?php echo $form['religion']->renderLabel(__('Religion') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['religion']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['stuAdmissionNo']->renderLabel(__('Student Admission No')); ?>
+                    <?php echo $form['stuAdmissionNo']->renderLabel(__('Student Admission No') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['stuAdmissionNo']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['classOfAdmission']->renderLabel(__('Class of Admission')); ?>
+                    <?php echo $form['classOfAdmission']->renderLabel(__('Class of Admission') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['classOfAdmission']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['race']->renderLabel(__('Race')); ?>
+                    <?php echo $form['race']->renderLabel(__('Race') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['race']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['dateOfAdmission']->renderLabel(__('Date of Admission')); ?>
+                    <?php echo $form['dateOfAdmission']->renderLabel(__('Date of Admission') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['dateOfAdmission']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['house']->renderLabel(__('House')); ?>
+                    <?php echo $form['house']->renderLabel(__('House') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['house']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['medium']->renderLabel(__('Medium')); ?>
+                    <?php echo $form['medium']->renderLabel(__('Medium') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['medium']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['resAddress']->renderLabel(__('Residential Address')); ?>
+                    <?php echo $form['resAddress']->renderLabel(__('Residential Address') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['resAddress']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
@@ -135,13 +135,13 @@
 
             <div id="dadTogDiv">
                 <div>
-                    <?php echo $form['dadName']->renderLabel(__('Name with initials')); ?>
+                    <?php echo $form['dadName']->renderLabel(__('Name with initials') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['dadName']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['dadOccupation']->renderLabel(__('Occupation')); ?>
+                    <?php echo $form['dadOccupation']->renderLabel(__('Occupation') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['dadOccupation']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
@@ -215,13 +215,13 @@
 
             <div id="momTogDiv">
                 <div>
-                    <?php echo $form['momName']->renderLabel(__('Name with initials')); ?>
+                    <?php echo $form['momName']->renderLabel(__('Name with initials') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['momName']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['momOccupation']->renderLabel(__('Occupation')); ?>
+                    <?php echo $form['momOccupation']->renderLabel(__('Occupation') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['momOccupation']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
@@ -352,25 +352,25 @@
 
             <div id="emergeTogDiv">
                 <div>
-                    <?php echo $form['emergencyContactName']->renderLabel(__('Name')); ?>
+                    <?php echo $form['emergencyContactName']->renderLabel(__('Name') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['emergencyContactName']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['emergencyContactRelationship']->renderLabel(__('Relationship')); ?>
+                    <?php echo $form['emergencyContactRelationship']->renderLabel(__('Relationship') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['emergencyContactRelationship']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['emergencyContactAddress']->renderLabel(__('Address')); ?>
+                    <?php echo $form['emergencyContactAddress']->renderLabel(__('Address') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['emergencyContactAddress']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['emergencyContactMobileNo']->renderLabel(__('Mobile No')); ?>
+                    <?php echo $form['emergencyContactMobileNo']->renderLabel(__('Mobile No') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['emergencyContactMobileNo']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
@@ -382,7 +382,7 @@
                 </div>
                 <br class="clear" />
                 <div>
-                    <?php echo $form['emergencyContactResidentialNo']->renderLabel(__('Email')); ?>
+                    <?php echo $form['emergencyContactResidentialNo']->renderLabel(__('Residential No') . ' <span class="required">*</span>'); ?>
                     <?php echo $form['emergencyContactResidentialNo']->render(array("class" => "formInputText")); ?>
                     <div class="errorHolder below"></div>
                 </div>
@@ -400,4 +400,9 @@
 </div>
 <div class="paddingLeftRequired"><span class="required">*</span> <?php echo __(CommonMessages::REQUIRED_FIELD); ?></div>
 <br class="clear" />
+<script type="text/javascript">
+    var lang_fieldRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
+    var lang_exceed50Charactors = '<?php echo __(ValidationMessages::TEXT_LENGTH_EXCEEDS, array('%amount%' => 50)); ?>';
+    var lang_exceed35Charactors = '<?php echo __(ValidationMessages::TEXT_LENGTH_EXCEEDS, array('%amount%' => 35)); ?>';
+</script>
 

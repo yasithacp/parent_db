@@ -33,6 +33,7 @@ class addParentInfoAction extends sfAction {
 
 
         if ($request->isMethod('post')) {
+            $this->form->bind($request->getParameter($this->form->getName()));
             if ($this->form->isValid()) {
                 $result = $this->form->save();
                 if (isset($result['messageType'])) {

@@ -77,7 +77,7 @@ class AddPrentInfoForm extends BaseForm {
 
         $this->setValidators(array(
             'stuSurname' => new sfValidatorString(array('required' => true, 'max_length' => 35)),
-            'stuOtherNames' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
+            'stuOtherNames' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
             'curClass' => new sfValidatorString(array('required' => true, 'max_length' => 10)),
             'dateOfBirth' => new ohrmDateValidator(array('date_format' => $inputDatePattern, 'required' => true),
                 array('invalid' => 'Date format should be ' . $inputDatePattern)),
@@ -90,20 +90,23 @@ class AddPrentInfoForm extends BaseForm {
             'house' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
             'medium' => new sfValidatorString(array('required' => true, 'max_length' => 10)),
             'resAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
+            'scholarFromOther' => new sfValidatorPass(array('required' => false)),
+            'scholarFromRoyal' => new sfValidatorPass(array('required' => false)),
+            'noScholar' => new sfValidatorPass(array('required' => false)),
 
             'dadName' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
             'dadOccupation' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
             'dadOtherOccupation' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'dadDesignation' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
-            'dadCompany' => new sfValidatorString(array('required' => fasle, 'max_length' => 50)),
+            'dadCompany' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'isFatherOldBoy' => new sfValidatorChoice(array('required' => false,
                 'choices' => array(1,0),
                 'multiple' => false)),
             'dadObMemId' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'dadOfficeAddress' => new sfValidatorString(array('required' => false, 'max_length' => 255)),
-            'dadMobileNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'dadOfficeNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'dadResidentialNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
+            'dadMobileNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'dadOfficeNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'dadResidentialNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
             'dadEmail' => new sfValidatorEmail(array('required' => false, 'max_length' => 100, 'trim' => true)),
 
             'momName' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
@@ -114,9 +117,9 @@ class AddPrentInfoForm extends BaseForm {
             'momAdmissionNumber' => new sfValidatorString(array('required' => false, 'max_length' => 20)),
 //            what is mom admission number???
             'momOfficeAddress' => new sfValidatorString(array('required' => false, 'max_length' => 255)),
-            'momMobileNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'momOfficeNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'momResidentialNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
+            'momMobileNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'momOfficeNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'momResidentialNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
             'momEmail' => new sfValidatorEmail(array('required' => false, 'max_length' => 100, 'trim' => true)),
 
             'guardianName' => new sfValidatorString(array('required' => false, 'max_length' => 100)),
@@ -124,17 +127,17 @@ class AddPrentInfoForm extends BaseForm {
             'guardianRelationship' => new sfValidatorString(array('required' => false, 'max_length' => 20)),
             'guardianHomeAddress' => new sfValidatorString(array('required' => false, 'max_length' => 255)),
             'guardianOfficeAddress' => new sfValidatorString(array('required' => false, 'max_length' => 255)),
-            'guardianMobileNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'guardianOfficeNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'guardianResidentialNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
+            'guardianMobileNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'guardianOfficeNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'guardianResidentialNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
             'guardianEmail' => new sfValidatorEmail(array('required' => false, 'max_length' => 100, 'trim' => true)),
 
             'emergencyContactName' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
             'emergencyContactRelationship' => new sfValidatorString(array('required' => true, 'max_length' => 20)),
             'emergencyContactAddress' => new sfValidatorString(array('required' => true, 'max_length' => 255)),
-            'emergencyContactMobileNo' => new sfValidatorString(array('required' => true, 'max_length' => 15)),
-            'emergencyContactOfficeNo' => new sfValidatorString(array('required' => false, 'max_length' => 15)),
-            'emergencyContactResidentialNo' => new sfValidatorString(array('required' => true, 'max_length' => 15))
+            'emergencyContactMobileNo' => new sfValidatorNumber(array('required' => true, 'max' => 9999999999, 'min' => 0)),
+            'emergencyContactOfficeNo' => new sfValidatorNumber(array('required' => false, 'max' => 9999999999, 'min' => 0)),
+            'emergencyContactResidentialNo' => new sfValidatorNumber(array('required' => true, 'max' => 9999999999, 'min' => 0))
 
         ));
 
@@ -198,6 +201,131 @@ class AddPrentInfoForm extends BaseForm {
     }
 
     public function save() {
+
+        $stuSurname = $this->getValue('stuSurname');
+        $stuOtherNames = $this->getValue('stuOtherNames');
+        $curClass = $this->getValue('curClass');
+        $dateOfBirth = $this->getValue('dateOfBirth');
+        $religion = $this->getValue('religion');
+        $stuAdmissionNo= $this->getValue('stuAdmissionNo');
+        $classOfAdmission = $this->getValue('classOfAdmission');
+        $race = $this->getValue('race');
+        $dateOfAdmission = $this->getValue('dateOfAdmission');
+        $house = $this->getValue('house');
+        $medium = $this->getValue('medium');
+        $resAddress = $this->getValue('resAddress');
+        $scholarFromOther= $this->getValue('scholarFromOther');
+        $scholarFromRoyal = $this->getValue('scholarFromRoyal');
+        $noScholar = $this->getValue('noScholar');
+
+        $dadName = $this->getValue('dadName');
+        $dadOccupation = $this->getValue('dadOccupation');
+        $dadOtherOccupation = $this->getValue('dadOtherOccupation');
+        $dadDesignation = $this->getValue('dadDesignation');
+        $dadCompany = $this->getValue('dadCompany');
+        $isFatherOldBoy = $this->getValue('isFatherOldBoy');
+        $dadObMemId = $this->getValue('dadObMemId');
+        $dadOfficeAddress = $this->getValue('dadOfficeAddress');
+        $dadMobileNo= $this->getValue('dadMobileNo');
+        $dadOfficeNo = $this->getValue('dadOfficeNo');
+        $dadResidentialNo = $this->getValue('dadResidentialNo');
+        $dadEmail= $this->getValue('dadEmail');
+
+        $momName= $this->getValue('momName');
+        $momOccupation = $this->getValue('momOccupation');
+        $momOtherOccupation = $this->getValue('momOtherOccupation');
+        $momDesignation = $this->getValue('momDesignation');
+        $momCompany = $this->getValue('momCompany');
+        $momAdmissionNumber = $this->getValue('momAdmissionNumber');
+        $momOfficeAddress = $this->getValue('momOfficeAddress');
+        $momMobileNo = $this->getValue('momMobileNo');
+        $momOfficeNo= $this->getValue('momOfficeNo');
+        $momResidentialNo= $this->getValue('momResidentialNo');
+        $momEmail= $this->getValue('momEmail');
+
+        $guardianName = $this->getValue('guardianName');
+        $guardianDesignation = $this->getValue('guardianDesignation');
+        $guardianRelationship = $this->getValue('guardianRelationship');
+        $guardianHomeAddress = $this->getValue('guardianHomeAddress');
+        $guardianOfficeAddress = $this->getValue('guardianOfficeAddress');
+        $guardianMobileNo = $this->getValue('guardianMobileNo');
+        $guardianOfficeNo = $this->getValue('guardianOfficeNo');
+        $guardianResidentialNo = $this->getValue('guardianResidentialNo');
+        $guardianEmail = $this->getValue('guardianEmail');
+
+        $emergencyContactName = $this->getValue('emergencyContactName');
+        $emergencyContactRelationship = $this->getValue('emergencyContactRelationship');
+        $emergencyContactAddress = $this->getValue('emergencyContactAddress');
+        $emergencyContactMobileNo = $this->getValue('emergencyContactMobileNo');
+        $emergencyContactOfficeNo = $this->getValue('emergencyContactOfficeNo');
+        $emergencyContactResidentialNo = $this->getValue('emergencyContactResidentialNo');
+
+        $stuPrentRecord = new StudentParentInformation();
+        $stuPrentRecord->setStuSurname($stuSurname);
+        $stuPrentRecord->setStuOtherNames($stuOtherNames);
+        $stuPrentRecord->setCurClass($curClass);
+        $stuPrentRecord->setDateOfBirth($dateOfBirth);
+        $stuPrentRecord->setReligion($religion);
+        $stuPrentRecord->setStuAdmissionNo($stuAdmissionNo);
+        $stuPrentRecord->setClassOfAdmission($classOfAdmission);
+        $stuPrentRecord->setRace($race);
+        $stuPrentRecord->setDateOfAdmission($dateOfAdmission);
+        $stuPrentRecord->setHouse($house);
+        $stuPrentRecord->setMedium($medium);
+        $stuPrentRecord->setResAddress($resAddress);
+        $stuPrentRecord->setScholarFromOther($scholarFromOther);
+        $stuPrentRecord->setScholarFromRoyal($scholarFromRoyal);
+        $stuPrentRecord->setNoScholar($noScholar);
+
+        $stuPrentRecord->setDadName($dadName);
+        $stuPrentRecord->setDadOccupation($dadOccupation);
+        $stuPrentRecord->setDadOtherOccupation($dadOtherOccupation);
+        $stuPrentRecord->setDadDesignation($dadDesignation);
+        $stuPrentRecord->setDadCompany($dadCompany);
+        $stuPrentRecord->setIsFatherOldBoy($isFatherOldBoy);
+        $stuPrentRecord->setDadObMemId($dadObMemId);
+        $stuPrentRecord->setDadOfficeAddress($dadOfficeAddress);
+        $stuPrentRecord->setDadMobileNo($dadMobileNo);
+        $stuPrentRecord->setDadOfficeNo($dadOfficeNo);
+        $stuPrentRecord->setDadResidentialNo($dadResidentialNo);
+        $stuPrentRecord->setDadEmail($dadEmail);
+
+        $stuPrentRecord->setMomName($momName);
+        $stuPrentRecord->setMomOccupation($momOccupation);
+        $stuPrentRecord->setMomOtherOccupation($momOtherOccupation);
+        $stuPrentRecord->setMomDesignation($momDesignation);
+        $stuPrentRecord->setMomCompany($momCompany);
+        $stuPrentRecord->setMomAdmissionNumber($momAdmissionNumber);
+        $stuPrentRecord->setMomOfficeAddress($momOfficeAddress);
+        $stuPrentRecord->setMomMobileNo($momMobileNo);
+        $stuPrentRecord->setMomOfficeNo($momOfficeNo);
+        $stuPrentRecord->setMomResidentialNo($momResidentialNo);
+        $stuPrentRecord->setMomEmail($momEmail);
+
+        $stuPrentRecord->setGuardianName($guardianName);
+        $stuPrentRecord->setGuardianDesignation($guardianDesignation);
+        $stuPrentRecord->setGuardianRelationship($guardianRelationship);
+        $stuPrentRecord->setGuardianHomeAddress($guardianHomeAddress);
+        $stuPrentRecord->setGuardianOfficeAddress($guardianOfficeAddress);
+        $stuPrentRecord->setGuardianMobileNo($guardianMobileNo);
+        $stuPrentRecord->setGuardianOfficeNo($guardianOfficeNo);
+        $stuPrentRecord->setGuardianResidentialNo($guardianResidentialNo);
+        $stuPrentRecord->setGuardianEmail($guardianEmail);
+
+        $stuPrentRecord->setEmergencyContactName($emergencyContactName);
+        $stuPrentRecord->setEmergencyContactRelationship($emergencyContactRelationship);
+        $stuPrentRecord->setEmergencyContactAddress($emergencyContactAddress);
+        $stuPrentRecord->setEmergencyContactMobileNo($emergencyContactMobileNo);
+        $stuPrentRecord->setEmergencyContactOfficeNo($emergencyContactOfficeNo);
+        $stuPrentRecord->setEmergencyContactResidentialNo($emergencyContactResidentialNo);
+
+        $this->resultArray = array();
+        $this->resultArray['messageType'] = 'success';
+        $this->resultArray['message'] = __(TopLevelMessages::UPDATE_SUCCESS);
+
+        $stuPrentRecord->save();
+
+        return $this->resultArray;
 
     }
 }

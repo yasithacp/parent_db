@@ -49,11 +49,6 @@ textarea.formInputText {
     width: 160px;
 }
 
-label.error{
-    width:220px !important;
-    padding-left: 1px;
-}
-
 div .column {
     float:left;
     width:25%;
@@ -95,8 +90,9 @@ div.messageBalloon_success {
     width: 800px;
 }
 
-form#frmAddCandidate div label.appDate label.error{
-    padding-left: 120px;
+label.error{
+    padding-left: 240px;
+    width: 180px !important;
 }
 
 .radio_list{
