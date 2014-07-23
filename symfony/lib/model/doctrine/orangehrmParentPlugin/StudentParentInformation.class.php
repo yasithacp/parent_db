@@ -12,4 +12,5 @@
  */
 class StudentParentInformation extends PluginStudentParentInformation
 {
+    const NUMBER_OF_RECORDS_PER_PAGE = 50;
 }

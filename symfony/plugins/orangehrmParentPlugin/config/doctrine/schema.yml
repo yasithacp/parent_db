@@ -3,6 +3,7 @@ StudentParentInformation:
 #  actAs: [NestedSet]
   columns:
     student_id:
+        name: student_id as studentId
         type: int(2000000)
         autoincrement: true
         primary: true

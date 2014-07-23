@@ -551,3 +551,27 @@ Subscriber:
   formAction: 'index.php/admin/deleteSubscribers'
   assets: []
   jsInitMethods: []
+
+ParentInfo:
+  pluginName: orangehrmParentPlugin
+  hasSelectableRows: true
+  unselectableRowIds: []
+  idValueGetter: getStudentId
+  title: ''
+  tableWidth: 100%
+  hasSummary: false
+  summary: []
+  buttons:
+    Add:
+      label: Add
+      function: addParentInfo
+    Delete:
+      label: Delete
+      type: submit
+  buttonsPosition: before-data
+  formMethod: post
+  formAction: 'index.php/parent/deleteParentInfo'
+  assets:
+    - viewParentInfoSuccess.js
+    - viewParentInfoSuccess.css
+  jsInitMethods: []
