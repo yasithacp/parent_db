@@ -122,7 +122,6 @@ StudentParentInformation:
     mother_occupation:
         name: mother_occupation as momOccupation
         type: varchar(50)
-        notnull: true
     mother_other_occupation:
         name: mother_other_occupation as momOtherOccupation
         type: varchar(50)

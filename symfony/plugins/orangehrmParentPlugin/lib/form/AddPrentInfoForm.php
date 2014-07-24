@@ -110,7 +110,7 @@ class AddPrentInfoForm extends BaseForm {
             'dadEmail' => new sfValidatorEmail(array('required' => false, 'max_length' => 100, 'trim' => true)),
 
             'momName' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
-            'momOccupation' => new sfValidatorString(array('required' => true, 'max_length' => 50)),
+            'momOccupation' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'momOtherOccupation' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'momDesignation' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
             'momCompany' => new sfValidatorString(array('required' => false, 'max_length' => 50)),
