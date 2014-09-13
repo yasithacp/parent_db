@@ -11,13 +11,13 @@ class SmsGatewayForm extends BaseForm {
 
     public function configure() {
         $this->setWidgets(array(
-            'number' => new sfWidgetFormInputText(),
+            'number' => new sfWidgetFormSelect(array('choices' => array('all' => 'All Parents'))),
             'message' => new sfWidgetFormTextArea()
         ));
 
         $this->setValidators(array(
             'number' => new sfValidatorString(array('required' => true)),
-            'message' => new sfValidatorString(array('required' => true, 'max_length' => 120))
+            'message' => new sfValidatorString(array('required' => true, 'max_length' => 160))
         ));
 
         $this->widgetSchema->setNameFormat('gateway[%s]');
@@ -27,6 +27,11 @@ class SmsGatewayForm extends BaseForm {
         $username = "esmsusr_rcg";
         $password = "password";
 
+        $dao = new ParentDao();
+        $bomb = $dao->getParentsMobileNumbersTest();
+
+        $chunks = array_chunk($bomb, 300);
+
         $gateway = new SampleService();
         $session = $gateway->createSession('',$username,$password,'');
 
@@ -34,7 +39,10 @@ class SmsGatewayForm extends BaseForm {
         $message_body = $this->getValue('message');
 
         $numbers = explode(",", $this->getValue('number'));
-        $response = $gateway->sendMessages($session,$alias,$message_body,$numbers);
+
+        foreach($chunks as $chunk) {
+            $response = $gateway->sendMessages($session,$alias,$message_body,$chunk);
+        }
 
         if ($response == '200') {
             $this->resultArray['messageType'] = 'success';

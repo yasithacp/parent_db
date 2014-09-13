@@ -226,3 +226,37 @@ StudentParentInformation:
         name: emergency_contact_residential as emergencyContactResidentialNo
         type: int(10)
         notnull: true
+
+TestTable:
+  tableName: test_table
+  columns:
+    student_id:
+        name: student_id as studentId
+        type: int(2000000)
+        autoincrement: true
+        primary: true
+    mother_contact_mobile:
+        name: mother_contact_mobile as momMobileNo
+        type: int(10)
+        default: null
+    father_contact_number_mobile:
+        name: father_contact_number_mobile as dadMobileNo
+        type: int(10)
+        default: null
+
+TestTable2:
+  tableName: test_table2
+  columns:
+    student_id:
+        name: student_id as studentId
+        type: int(2000000)
+        autoincrement: true
+        primary: true
+    mother_email:
+        name: mother_email as momEmail
+        type: varchar(100)
+        default: null
+    father_email:
+        name: father_email as dadEmail
+        type: varchar(100)
+        default: null

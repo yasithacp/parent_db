@@ -736,6 +736,7 @@ $subs = array();
 $subs[] = new MenuItem("forum", $i18n->__("Add Parent's Info"), "./symfony/web/index.php/parent/addParentInfo", 'rightMenu');
 $subs[] = new MenuItem("support", $i18n->__("View Parent's Info"), "./symfony/web/index.php/parent/viewParentInfo", 'rightMenu');
 $subs[] = new MenuItem("gateway", $i18n->__("SMS Gateway"), "./symfony/web/index.php/parent/smsGateway", 'rightMenu');
+$subs[] = new MenuItem("mail", $i18n->__("E-mail Portal"), "./symfony/web/index.php/parent/mailSender", 'rightMenu');
 
 $menuItem->setSubMenuItems($subs);
 $menu[] = $menuItem;

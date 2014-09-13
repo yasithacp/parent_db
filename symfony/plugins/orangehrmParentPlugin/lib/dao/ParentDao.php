@@ -76,4 +76,158 @@ class ParentDao extends BaseDao {
         $count = $q->execute()->count();
         return $count;
     }
+
+//    public function getParentsMobileNumbers() {
+//
+//        try {
+//            $q1 = Doctrine_Query::create()
+//                ->select('p.mother_contact_mobile')
+//                ->from('StudentParentInformation p')
+//                ->where('p.mother_contact_mobile != 0');
+//
+//            $result1 = $q1->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+//
+//            $q2 = Doctrine_Query::create()
+//                ->select('p.father_contact_number_mobile')
+//                ->from('StudentParentInformation p')
+//                ->where('p.father_contact_number_mobile != 0');
+//
+//            $result2 = $q2->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+//
+//            $result = array();
+//
+//            foreach($result1 as $rec1) {
+//                array_push($result, $rec1['momMobileNo']);
+//            }
+//
+//            foreach($result2 as $rec2) {
+//                array_push($result, $rec2['dadMobileNo']);
+//            }
+//
+//            return $result;
+//
+//        } catch (Exception $e) {
+//            throw new DaoException($e->getMessage());
+//        }
+//
+//    }
+
+
+    public function getParentsMobileNumbersTest() {
+
+        try {
+            $q1 = Doctrine_Query::create()
+                ->select('p.mother_contact_mobile')
+                ->from('TestTable p')
+                ->where('p.mother_contact_mobile != 0');
+
+            $result1 = $q1->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+            $q2 = Doctrine_Query::create()
+                ->select('p.father_contact_number_mobile')
+                ->from('TestTable p')
+                ->where('p.father_contact_number_mobile != 0');
+
+            $result2 = $q2->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+            $result = array();
+
+            foreach($result1 as $rec1) {
+                array_push($result, $rec1['momMobileNo']);
+            }
+
+            foreach($result2 as $rec2) {
+                array_push($result, $rec2['dadMobileNo']);
+            }
+
+//            $result = array_unique($result);
+
+            $final = array();
+            foreach($result as $rec) {
+                array_push($final, $rec);
+            }
+
+            return $final;
+        } catch (Exception $e) {
+            throw new DaoException($e->getMessage());
+        }
+
+    }
+
+//    public function getParentsEmails() {
+//
+//        try {
+//            $q1 = Doctrine_Query::create()
+//                ->select('p.mother_email')
+//                ->from('StudentParentInformation p')
+//                ->where('p.mother_email != \'\'');
+//
+//            $result1 = $q1->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+//
+//            $q2 = Doctrine_Query::create()
+//                ->select('p.father_email')
+//                ->from('StudentParentInformation p')
+//                ->where('p.father_email != \'\'');
+//
+//            $result2 = $q2->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+//
+//            $result = array();
+//
+//            foreach($result1 as $rec1) {
+//                array_push($result, $rec1['momEmail']);
+//            }
+//
+//            foreach($result2 as $rec2) {
+//                array_push($result, $rec2['dadEmail']);
+//            }
+//
+//            print_r($result);die;
+//            return $result;
+//
+//        } catch (Exception $e) {
+//            throw new DaoException($e->getMessage());
+//        }
+//
+//    }
+
+    public function getParentsEmailsTest() {
+
+        try {
+            $q1 = Doctrine_Query::create()
+                ->select('p.mother_email')
+                ->from('TestTable2 p')
+                ->where('p.mother_email != \'\'');
+
+            $result1 = $q1->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+            $q2 = Doctrine_Query::create()
+                ->select('p.father_email')
+                ->from('TestTable2 p')
+                ->where('p.father_email != \'\'');
+
+            $result2 = $q2->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+            $result = array();
+
+            foreach($result1 as $rec1) {
+                array_push($result, $rec1['momEmail']);
+            }
+
+            foreach($result2 as $rec2) {
+                array_push($result, $rec2['dadEmail']);
+            }
+
+            $result = array_unique($result);
+
+            $final = array();
+            foreach($result as $rec) {
+                array_push($final, $rec);
+            }
+
+            return $final;
+        } catch (Exception $e) {
+            throw new DaoException($e->getMessage());
+        }
+
+    }
 }

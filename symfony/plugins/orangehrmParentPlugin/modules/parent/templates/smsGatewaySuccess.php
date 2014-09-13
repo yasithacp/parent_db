@@ -20,14 +20,14 @@
 
             <br class="clear"/>
             <div class="newColumn">
-                <?php echo $form['number']->renderLabel(__('Mobile Number') . ' <span class="required">*</span>'); ?>
+                <?php echo $form['number']->renderLabel(__('Send To') . ' <span class="required">*</span>'); ?>
                 <?php echo $form['number']->render(array("class" => "formInput", "maxlength" => 120)); ?>
                 <div class="errorHolder"></div>
             </div>
             <br class="clear"/>
             <div class="newColumn">
                 <?php echo $form['message']->renderLabel(__('Message') . ' <span class="required">*</span>'); ?>
-                <?php echo $form['message']->render(array("class" => "formInput", "maxlength" => 120)); ?>
+                <?php echo $form['message']->render(array("class" => "formInput", "maxlength" => 160)); ?>
                 <div class="errorHolder"></div>
             </div>
 
