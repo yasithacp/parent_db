@@ -96,8 +96,10 @@ StudentParentInformation:
         name: father_office_address as dadOfficeAddress
         type: varchar(255)
         default: null
-#    office_city:
-#        type: varchar(10)
+    father_office_city:
+        name: father_office_city as dadOfficeCity
+        type: varchar(100)
+        default: null
     father_contact_number_mobile:
         name: father_contact_number_mobile as dadMobileNo
         type: int(10)
@@ -139,8 +141,12 @@ StudentParentInformation:
         type: varchar(20)
         default: null
     mother_office_address:
-        name: present_address_office as momOfficeAddress
+        name: mother_address_office as momOfficeAddress
         type: varchar(255)
+        default: null
+    mother_office_city:
+        name: mother_office_city as momOfficeCity
+        type: varchar(100)
         default: null
     mother_contact_mobile:
         name: mother_contact_mobile as momMobileNo
