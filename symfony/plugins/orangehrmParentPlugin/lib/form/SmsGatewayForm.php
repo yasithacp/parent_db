@@ -35,7 +35,7 @@ class SmsGatewayForm extends BaseForm {
         $gateway = new SampleService();
         $session = $gateway->createSession('',$username,$password,'');
 
-        $alias = "RCG";
+        $alias = "RCIN";
         $message_body = $this->getValue('message');
 
         $numbers = explode(",", $this->getValue('number'));

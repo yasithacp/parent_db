@@ -29,6 +29,10 @@ label.error {
     height: 300px;
 }
 
+#email_subject{
+    width: 500px;
+}
+
 #addDeleteBtnDiv{
     padding:  5px 5px 5px 5px;
 }

@@ -27,7 +27,7 @@
             <br class="clear"/>
             <div class="newColumn">
                 <?php echo $form['message']->renderLabel(__('Mail') . ' <span class="required">*</span>'); ?>
-                <?php echo $form['message']->render(array("class" => "formInput", "maxlength" => 160)); ?>
+                <?php echo $form['message']->render(array("class" => "formInput", "maxlength" => 2500)); ?>
                 <div class="errorHolder"></div>
             </div>
 

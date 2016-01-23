@@ -60,6 +60,7 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
         width: 240px;
         border: 0px;
         background-color: transparent;
+        margin-top: -15px !important;
     }
 
     #txtUsername, #txtPassword {
@@ -130,7 +131,8 @@ $imagePath = public_path("../../themes/{$styleSheet}/images/login");
     color: #878787;
     padding: 4px 8px;
     position: relative;
-    left:-254px;
+    left:1px !important;
+    top: -12px !important;
 }
 
     

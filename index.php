@@ -802,7 +802,7 @@ if (($_GET['menu_no_top'] == "eim") && ($arrRights['view'] || $allowAdminView)) 
     }
 } elseif (($_GET['menu_no_top'] == "hr") && $arrRights['view']) {
 
-    $home = "./symfony/web/index.php/pim/viewEmployeeList/reset/1";
+    $home = "./symfony/web/index.php/parent/viewParentInfo";
     if (isset($_GET['uri'])) {
         $home = $_GET['uri'];
     } elseif (isset($_GET['id'])) {

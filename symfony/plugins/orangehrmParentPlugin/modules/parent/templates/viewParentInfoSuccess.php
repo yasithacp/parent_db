@@ -5,7 +5,7 @@
 use_stylesheet('../../../themes/orange/css/ui-lightness/jquery-ui-1.7.2.custom.css');
 use_javascript('../../../scripts/jquery/ui/ui.core.js');
 use_javascript('../../../scripts/jquery/ui/ui.dialog.js');
-use_stylesheet('../orangehrmRecruitmentPlugin/css/viewJobVacancySuccess');
+use_stylesheet('../orangehrmRecruitmentPlugin/css/viewParentInfoSuccess');
 use_javascript('../orangehrmRecruitmentPlugin/js/viewJobVacancySuccess');
 ?>
 
@@ -32,6 +32,8 @@ use_javascript('../orangehrmRecruitmentPlugin/js/viewJobVacancySuccess');
                 <?php echo $form['dadOccupation']->renderLabel(__('Father\'s Occupation')); ?>
                 <?php echo $form['dadOccupation']->render(array("maxlength" => 50)); ?>
             </div>
+            <br class="clear"/>
+            <br class="clear"/>
             <div class="column">
                 <?php echo $form['momOccupation']->renderLabel(__('Mother\'s Occupation')); ?>
                 <?php echo $form['momOccupation']->render(array("maxlength" => 50)); ?>
